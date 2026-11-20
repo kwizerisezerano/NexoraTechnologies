@@ -88,7 +88,7 @@
                 role="status"
               >
                 <Icon name="lucide:check-circle-2" class="h-4 w-4" />
-                Thank you! We'll get back to you soon.
+                Your email app is opening — just hit send and we'll be in touch.
               </p>
             </div>
           </form>
@@ -117,7 +117,16 @@ const form = reactive({
 const submitted = ref(false)
 
 const handleSubmit = () => {
-  console.log('Form submitted:', form)
+  const subject = `New enquiry from ${form.name}`
+  const body = [
+    `Name: ${form.name}`,
+    `Email: ${form.email}`,
+    '',
+    form.message
+  ].join('\n')
+
+  window.location.href = `mailto:info@nexoratechnologies.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`
+
   submitted.value = true
   setTimeout(() => {
     submitted.value = false
