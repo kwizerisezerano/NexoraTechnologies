@@ -30,7 +30,10 @@
               </span>
               <div>
                 <dt class="font-semibold text-slate-900">{{ item.label }}</dt>
-                <dd class="mt-0.5 text-sm text-slate-600">{{ item.value }}</dd>
+                <dd class="mt-0.5 text-sm text-slate-600">
+                  <a v-if="item.href" :href="item.href" class="transition-colors hover:text-brand-600">{{ item.value }}</a>
+                  <template v-else>{{ item.value }}</template>
+                </dd>
               </div>
             </div>
           </dl>
@@ -103,7 +106,7 @@ import { reactive, ref } from 'vue'
 
 const contactInfo = [
   { label: 'Location', value: 'Kigali, Rwanda', icon: 'lucide:map-pin' },
-  { label: 'Email', value: 'info@nexoratechnologies.com', icon: 'lucide:mail' },
+  { label: 'Email', value: 'kwizeraolivier.el@gmail.com', href: 'mailto:kwizeraolivier.el@gmail.com', icon: 'lucide:mail' },
   { label: 'Phone', value: '+250 787 059 322 / +250 790 989 830', icon: 'lucide:phone' },
   { label: 'Working Hours', value: 'Mon - Fri: 8:00 AM - 6:00 PM', icon: 'lucide:clock' }
 ]

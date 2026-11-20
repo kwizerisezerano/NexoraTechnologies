@@ -30,21 +30,33 @@
 <script setup lang="ts">
 const testimonials = [
   {
-    name: 'Jean Mugabo',
-    role: 'CEO, TechStart Rwanda',
-    text: 'Nexora Technologies delivered an exceptional business platform that transformed our operations. Their team is professional and responsive.',
+    name: 'TontineHub',
+    role: 'Founding Team',
+    text: 'Nexora turned our manual savings process into a real-time platform. Every franc is tracked, loans are approved in minutes, and our 10,000+ members finally trust the numbers.',
     rating: 5
   },
   {
-    name: 'Marie Uwineza',
-    role: 'Director, Kigali International School',
-    text: 'The school management system they built has streamlined our administrative processes. Highly recommended for any educational institution.',
+    name: 'GECO Rwanda',
+    role: 'Epilepsy Care Programme',
+    text: 'The platform Nexora built gives our care teams one place to manage cases and share information. It has cut the paperwork behind the compassionate care we deliver.',
     rating: 5
   },
   {
-    name: 'Patrick Ndayisaba',
-    role: 'Owner, MegaMart',
-    text: 'Their inventory and sales system helped us track our business in real-time. Great support and timely delivery.',
+    name: 'Tontine MIS (TMIS)',
+    role: 'Management System Client',
+    text: 'Nexora built a management information system that brought our operations, member records, and finances into one place — replacing scattered spreadsheets with something our team actually enjoys using.',
+    rating: 5
+  },
+  {
+    name: 'Menya-Tech',
+    role: 'Learning Platform Team',
+    text: 'They delivered a learning platform that supports our whole programme — software development, networking, multimedia, and diploma modules — on schedule and built to grow with us.',
+    rating: 5
+  },
+  {
+    name: 'El Verbuena',
+    role: 'Graphic & UI Designer',
+    text: 'Nexora delivered a portfolio that finally matches the quality of my work — clean, fast, and elegant. It presents my branding and design projects exactly the way I wanted.',
     rating: 5
   }
 ]

@@ -63,7 +63,7 @@
             </li>
             <li class="flex items-center gap-2">
               <Icon name="lucide:mail" class="h-4 w-4 text-brand-400" />
-              info@nexoratechnologies.com
+              <a href="mailto:kwizeraolivier.el@gmail.com" class="transition hover:text-brand-300">kwizeraolivier.el@gmail.com</a>
             </li>
             <li class="flex items-center gap-2">
               <Icon name="lucide:clock" class="h-4 w-4 text-brand-400" />
