@@ -8,7 +8,7 @@
         <!-- Logo -->
         <NuxtLink
           to="/"
-          class="flex items-center"
+          class="flex items-center rounded-xl transition dark:-mx-2.5 dark:-my-1.5 dark:bg-white dark:px-2.5 dark:py-1.5 dark:shadow-sm"
           aria-label="Nexora Technologies — home"
         >
           <img
@@ -90,8 +90,8 @@
             :aria-label="$t('nav.themeLabel')"
             @click="toggleTheme"
           >
-            <Icon name="lucide:moon" class="h-5 w-5 dark:hidden" />
-            <Icon name="lucide:sun" class="hidden h-5 w-5 dark:block" />
+            <span class="dark:hidden"><Icon name="lucide:moon" class="h-5 w-5" /></span>
+            <span class="hidden dark:block"><Icon name="lucide:sun" class="h-5 w-5" /></span>
           </button>
 
           <a
@@ -167,8 +167,8 @@
                 :aria-label="$t('nav.themeLabel')"
                 @click="toggleTheme"
               >
-                <Icon name="lucide:moon" class="h-5 w-5 dark:hidden" />
-                <Icon name="lucide:sun" class="hidden h-5 w-5 dark:block" />
+                <span class="dark:hidden"><Icon name="lucide:moon" class="h-5 w-5" /></span>
+                <span class="hidden dark:block"><Icon name="lucide:sun" class="h-5 w-5" /></span>
               </button>
             </div>
 
