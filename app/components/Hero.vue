@@ -11,28 +11,28 @@
         <div class="max-w-2xl">
           <span
             v-motion="reveal(0)"
-            class="reveal inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700 shadow-soft backdrop-blur"
+            class="reveal inline-flex items-center gap-2 rounded-full border border-brand-200 bg-white/80 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-700 shadow-soft backdrop-blur dark:border-brand-500/30 dark:bg-slate-900/70 dark:text-brand-300"
           >
             <span class="relative flex h-2 w-2">
               <span class="absolute inline-flex h-full w-full rounded-full bg-brand-500 animate-pulse-ring" aria-hidden="true" />
               <span class="relative inline-flex h-2 w-2 rounded-full bg-brand-500" />
             </span>
-            Rwanda's Premier Technology Partner
+            {{ $t('hero.badge') }}
           </span>
 
           <h1
             v-motion="reveal(80)"
-            class="reveal mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl xl:text-7xl"
+            class="reveal mt-6 font-display text-4xl font-extrabold leading-[1.05] tracking-tight text-slate-900 sm:text-5xl lg:text-6xl xl:text-7xl dark:text-white"
           >
-            Building the Future of
-            <span class="text-gradient"> Technology</span>
+            {{ $t('hero.titleStart') }}
+            <span class="text-gradient"> {{ $t('hero.titleAccent') }}</span>
           </h1>
 
           <p
             v-motion="reveal(160)"
-            class="reveal mt-6 max-w-xl text-lg leading-relaxed text-slate-600"
+            class="reveal mt-6 max-w-xl text-lg leading-relaxed text-slate-600 dark:text-slate-300"
           >
-            Nexora Technologies builds innovative software — web and mobile apps, backend APIs, and enterprise systems — for organizations across Rwanda and beyond.
+            {{ $t('hero.subtitle') }}
           </p>
 
           <div
@@ -40,30 +40,30 @@
             class="reveal mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
           >
             <a href="#contact" class="btn btn-primary text-base">
-              Start Your Project
+              {{ $t('hero.ctaPrimary') }}
               <Icon name="lucide:arrow-up-right" class="h-5 w-5" />
             </a>
             <a href="#services" class="btn btn-ghost text-base">
-              Explore Services
+              {{ $t('hero.ctaSecondary') }}
               <Icon name="lucide:compass" class="h-5 w-5 text-brand-600" />
             </a>
           </div>
 
           <div
             v-motion="reveal(320)"
-            class="reveal mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500"
+            class="reveal mt-8 flex flex-wrap items-center gap-x-6 gap-y-3 text-sm text-slate-500 dark:text-slate-400"
           >
             <span class="inline-flex items-center gap-2">
               <Icon name="lucide:shield-check" class="h-4 w-4 text-brand-600" />
-              Reliable delivery
+              {{ $t('hero.trust1') }}
             </span>
             <span class="inline-flex items-center gap-2">
               <Icon name="lucide:map-pin" class="h-4 w-4 text-brand-600" />
-              Based in Kigali, Rwanda
+              {{ $t('hero.trust2') }}
             </span>
             <span class="inline-flex items-center gap-2">
               <Icon name="lucide:headset" class="h-4 w-4 text-brand-600" />
-              24/7 support
+              {{ $t('hero.trust3') }}
             </span>
           </div>
         </div>
@@ -84,23 +84,23 @@
               <span class="ml-3 text-xs font-medium text-slate-400">operations.nexora</span>
             </div>
 
-            <div class="rounded-2xl border border-slate-100 bg-slate-50/70 p-5">
+            <div class="rounded-2xl border border-slate-100 bg-slate-50/70 p-5 dark:border-slate-800 dark:bg-slate-800/50">
               <div class="flex items-center justify-between">
                 <div>
-                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">Live overview</p>
-                  <p class="mt-1 font-display text-2xl font-bold text-slate-900">System Health</p>
+                  <p class="text-xs font-semibold uppercase tracking-[0.14em] text-slate-400">{{ $t('hero.panel.liveOverview') }}</p>
+                  <p class="mt-1 font-display text-2xl font-bold text-slate-900 dark:text-white">{{ $t('hero.panel.systemHealth') }}</p>
                 </div>
-                <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700">
+                <span class="inline-flex items-center gap-1.5 rounded-full bg-brand-50 px-3 py-1 text-xs font-semibold text-brand-700 dark:bg-brand-500/15 dark:text-brand-300">
                   <span class="h-1.5 w-1.5 rounded-full bg-brand-500" />
-                  Online
+                  {{ $t('hero.panel.online') }}
                 </span>
               </div>
 
               <!-- mini stats -->
               <div class="mt-5 grid grid-cols-3 gap-3">
-                <div v-for="stat in mockStats" :key="stat.label" class="rounded-xl border border-slate-100 bg-white p-3">
-                  <div class="font-display text-lg font-bold text-slate-900">{{ stat.value }}</div>
-                  <div class="text-[0.68rem] text-slate-500">{{ stat.label }}</div>
+                <div v-for="stat in mockStats" :key="stat.label" class="rounded-xl border border-slate-100 bg-white p-3 dark:border-slate-800 dark:bg-slate-900">
+                  <div class="font-display text-lg font-bold text-slate-900 dark:text-white">{{ stat.value }}</div>
+                  <div class="text-[0.68rem] text-slate-500 dark:text-slate-400">{{ stat.label }}</div>
                 </div>
               </div>
 
@@ -120,13 +120,13 @@
           </div>
 
           <!-- floating chip -->
-          <div class="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 p-3 pr-5 shadow-lift backdrop-blur animate-float">
+          <div class="absolute -bottom-5 -left-4 flex items-center gap-3 rounded-2xl border border-slate-100 bg-white/95 p-3 pr-5 shadow-lift backdrop-blur animate-float dark:border-slate-800 dark:bg-slate-900/95">
             <span class="icon-tile h-10 w-10">
               <Icon name="lucide:trending-up" class="h-5 w-5" />
             </span>
             <div>
-              <div class="font-display text-base font-bold text-slate-900">+128%</div>
-              <div class="text-[0.68rem] text-slate-500">Delivery velocity</div>
+              <div class="font-display text-base font-bold text-slate-900 dark:text-white">+128%</div>
+              <div class="text-[0.68rem] text-slate-500 dark:text-slate-400">{{ $t('hero.panel.velocity') }}</div>
             </div>
           </div>
         </div>
@@ -136,13 +136,17 @@
 </template>
 
 <script setup lang="ts">
-const days = ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun']
+import { computed } from 'vue'
+
+const { t, tm } = useI18n()
+
+const days = computed(() => tm('hero.days') as unknown as string[])
 const chart = [42, 58, 36, 74, 62, 88, 70]
-const mockStats = [
-  { value: '12', label: 'Deployments' },
-  { value: '99.9%', label: 'Uptime' },
-  { value: '48', label: 'Tasks done' }
-]
+const mockStats = computed(() => [
+  { value: '12', label: t('hero.panel.deployments') },
+  { value: '99.9%', label: t('hero.panel.uptime') },
+  { value: '48', label: t('hero.panel.tasksDone') }
+])
 
 // Scroll-reveal variants (respects prefers-reduced-motion via the .reveal CSS override)
 const reveal = (delay = 0) => ({

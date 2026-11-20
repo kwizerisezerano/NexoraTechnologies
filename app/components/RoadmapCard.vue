@@ -6,10 +6,10 @@
     <span class="font-display text-3xl font-extrabold tracking-tight text-brand-500/30">
       {{ step }}
     </span>
-    <h4 class="mt-2 font-display text-base font-semibold tracking-tight text-slate-900">
+    <h4 class="mt-2 font-display text-base font-semibold tracking-tight text-slate-900 dark:text-white">
       {{ stage.title }}
     </h4>
-    <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ stage.description }}</p>
+    <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ stage.description }}</p>
   </div>
 </template>
 

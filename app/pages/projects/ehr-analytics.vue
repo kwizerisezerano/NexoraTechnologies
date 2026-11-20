@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen overflow-x-hidden bg-white">
+  <div class="min-h-screen overflow-x-hidden bg-white dark:bg-slate-950">
     <Navbar />
     <main>
       <!-- Hero ---------------------------------------------------------- -->
@@ -12,10 +12,10 @@
           <h1 class="section-title mt-4 max-w-3xl text-4xl sm:text-5xl lg:text-6xl">
             EHR Analytics Dashboard
           </h1>
-          <p class="mt-3 font-display text-lg font-semibold text-brand-600 sm:text-xl">
+          <p class="mt-3 font-display text-lg font-semibold text-brand-600 sm:text-xl dark:text-brand-400">
             Predictive Patient Risk Monitoring
           </p>
-          <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg">
+          <p class="mt-5 max-w-3xl text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
             A data-driven clinical decision-support tool built to break the &ldquo;data blindness&rdquo; in healthcare. It transforms raw
             Electronic Health Record (EHR) data into actionable insights — optimising antibiotic use, tracking resistance trends,
             and predicting patient outcomes.
@@ -25,7 +25,7 @@
             <span
               v-for="tag in tags"
               :key="tag"
-              class="rounded-full border border-brand-500/20 bg-white/70 px-3 py-1 text-xs font-semibold text-brand-700"
+              class="rounded-full border border-brand-500/20 bg-white/70 px-3 py-1 text-xs font-semibold text-brand-700 dark:bg-slate-900/70 dark:text-brand-300"
             >
               {{ tag }}
             </span>
@@ -44,12 +44,12 @@
       </section>
 
       <!-- 1. Problem & solution ---------------------------------------- -->
-      <section class="bg-white py-20 md:py-24">
+      <section class="bg-white py-20 md:py-24 dark:bg-slate-950">
         <div class="container-x">
           <div class="max-w-2xl">
             <span class="eyebrow">The Problem</span>
             <h2 class="section-title mt-4 text-3xl sm:text-4xl">Core problem &amp; how we solve it</h2>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">
+            <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
               Four gaps consistently block effective Antimicrobial Stewardship. Each one is addressed by a dedicated part of the system.
             </p>
           </div>
@@ -61,15 +61,15 @@
                   <Icon :name="gap.icon" class="h-6 w-6" />
                 </span>
                 <div class="min-w-0">
-                  <span class="text-[0.68rem] font-semibold uppercase tracking-wide text-brand-600">{{ gap.badge }}</span>
-                  <h3 class="mt-1 font-display text-lg font-semibold tracking-tight text-slate-900">{{ gap.title }}</h3>
+                  <span class="text-[0.68rem] font-semibold uppercase tracking-wide text-brand-600 dark:text-brand-400">{{ gap.badge }}</span>
+                  <h3 class="mt-1 font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">{{ gap.title }}</h3>
                 </div>
               </div>
-              <p class="mt-4 text-sm leading-relaxed text-slate-600">
-                <span class="font-semibold text-slate-800">The issue.</span> {{ gap.issue }}
+              <p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-800 dark:text-slate-200">The issue.</span> {{ gap.issue }}
               </p>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">
-                <span class="font-semibold text-brand-700">How we solve it.</span> {{ gap.solution }}
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-brand-700 dark:text-brand-300">How we solve it.</span> {{ gap.solution }}
               </p>
             </article>
           </div>
@@ -77,27 +77,27 @@
       </section>
 
       <!-- 2. Glossary --------------------------------------------------- -->
-      <section class="bg-slate-50 py-20 md:py-24">
+      <section class="bg-slate-50 py-20 md:py-24 dark:bg-slate-900">
         <div class="container-x">
           <div class="max-w-2xl">
             <span class="eyebrow">Glossary</span>
             <h2 class="section-title mt-4 text-3xl sm:text-4xl">Key terms, in plain words</h2>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">
+            <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
               The clinical and technical vocabulary behind the platform, explained simply.
             </p>
           </div>
 
           <dl class="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            <div v-for="item in glossary" :key="item.term" class="rounded-2xl border border-slate-200 bg-white p-5">
-              <dt class="font-display text-sm font-semibold text-slate-900">{{ item.term }}</dt>
-              <dd class="mt-1.5 text-sm leading-relaxed text-slate-600">{{ item.def }}</dd>
+            <div v-for="item in glossary" :key="item.term" class="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+              <dt class="font-display text-sm font-semibold text-slate-900 dark:text-white">{{ item.term }}</dt>
+              <dd class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ item.def }}</dd>
             </div>
           </dl>
         </div>
       </section>
 
       <!-- 3. Technical implementation ----------------------------------- -->
-      <section class="bg-white py-20 md:py-24">
+      <section class="bg-white py-20 md:py-24 dark:bg-slate-950">
         <div class="container-x">
           <div class="max-w-2xl">
             <span class="eyebrow">Technical Implementation</span>
@@ -109,10 +109,10 @@
               <span class="icon-tile">
                 <Icon :name="block.icon" class="h-6 w-6" />
               </span>
-              <h3 class="mt-5 font-display text-lg font-semibold tracking-tight text-slate-900">{{ block.title }}</h3>
+              <h3 class="mt-5 font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">{{ block.title }}</h3>
               <ul class="mt-4 space-y-3">
-                <li v-for="point in block.points" :key="point.label" class="text-sm leading-relaxed text-slate-600">
-                  <span class="font-semibold text-slate-800">{{ point.label }}.</span> {{ point.text }}
+                <li v-for="point in block.points" :key="point.label" class="text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                  <span class="font-semibold text-slate-800 dark:text-slate-200">{{ point.label }}.</span> {{ point.text }}
                 </li>
               </ul>
             </div>
@@ -121,12 +121,12 @@
       </section>
 
       <!-- 4. Clinical user guide ---------------------------------------- -->
-      <section class="bg-slate-50 py-20 md:py-24">
+      <section class="bg-slate-50 py-20 md:py-24 dark:bg-slate-900">
         <div class="container-x">
           <div class="max-w-2xl">
             <span class="eyebrow">Clinical User Guide</span>
             <h2 class="section-title mt-4 text-3xl sm:text-4xl">Understanding the dashboard</h2>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">
+            <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
               Each part of the platform, explained from a healthcare professional&rsquo;s perspective.
             </p>
           </div>
@@ -138,32 +138,32 @@
                   <Icon :name="area.icon" class="h-6 w-6" />
                 </span>
                 <div class="min-w-0">
-                  <h3 class="font-display text-lg font-semibold tracking-tight text-slate-900">{{ area.title }}</h3>
-                  <span class="mt-0.5 block text-[0.68rem] font-semibold uppercase tracking-wide text-slate-400">{{ area.kicker }}</span>
+                  <h3 class="font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">{{ area.title }}</h3>
+                  <span class="mt-0.5 block text-[0.68rem] font-semibold uppercase tracking-wide text-slate-400 dark:text-slate-500">{{ area.kicker }}</span>
                 </div>
               </div>
-              <p class="mt-4 text-sm leading-relaxed text-slate-600">
-                <span class="font-semibold text-slate-800">What it is.</span> {{ area.what }}
+              <p class="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-slate-800 dark:text-slate-200">What it is.</span> {{ area.what }}
               </p>
-              <p class="mt-3 text-sm leading-relaxed text-slate-600">
-                <span class="font-semibold text-brand-700">Clinical value.</span> {{ area.value }}
+              <p class="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                <span class="font-semibold text-brand-700 dark:text-brand-300">Clinical value.</span> {{ area.value }}
               </p>
             </article>
           </div>
 
           <!-- Alert routing -->
-          <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8">
-            <h3 class="font-display text-lg font-semibold tracking-tight text-slate-900">Email alert routing</h3>
-            <p class="mt-2 text-sm text-slate-600">
+          <div class="mt-10 rounded-3xl border border-slate-200 bg-white p-6 sm:p-8 dark:border-slate-800 dark:bg-slate-900">
+            <h3 class="font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">Email alert routing</h3>
+            <p class="mt-2 text-sm text-slate-600 dark:text-slate-300">
               Email alerts are routed automatically based on each user&rsquo;s assigned role.
             </p>
             <ul class="mt-5 space-y-3">
-              <li v-for="route in alertRouting" :key="route.type" class="flex flex-col gap-1 border-t border-slate-100 pt-3 first:border-0 first:pt-0 sm:flex-row sm:items-baseline sm:gap-4">
-                <code class="w-fit rounded-md bg-slate-100 px-2 py-0.5 font-mono text-xs font-semibold text-slate-700">{{ route.type }}</code>
-                <span class="text-sm text-slate-600">{{ route.recipients }}</span>
+              <li v-for="route in alertRouting" :key="route.type" class="flex flex-col gap-1 border-t border-slate-100 pt-3 first:border-0 first:pt-0 sm:flex-row sm:items-baseline sm:gap-4 dark:border-slate-800">
+                <code class="w-fit rounded-md bg-slate-100 px-2 py-0.5 font-mono text-xs font-semibold text-slate-700 dark:bg-slate-800 dark:text-slate-200">{{ route.type }}</code>
+                <span class="text-sm text-slate-600 dark:text-slate-300">{{ route.recipients }}</span>
               </li>
             </ul>
-            <p class="mt-5 text-sm text-slate-500">
+            <p class="mt-5 text-sm text-slate-500 dark:text-slate-400">
               Any undefined alert type defaults to the System Administrator. Recipient emails are encrypted in the database and
               decrypted only when a notification is sent.
             </p>
@@ -172,7 +172,7 @@
       </section>
 
       <!-- 5. Architecture + lifecycle ----------------------------------- -->
-      <section class="bg-white py-20 md:py-24">
+      <section class="bg-white py-20 md:py-24 dark:bg-slate-950">
         <div class="container-x">
           <div class="grid gap-12 lg:grid-cols-2">
             <div>
@@ -180,8 +180,8 @@
               <h2 class="section-title mt-4 text-3xl sm:text-4xl">How it is built</h2>
               <dl class="mt-8 space-y-5">
                 <div v-for="layer in architecture" :key="layer.label" class="border-l-2 border-brand-500/40 pl-4">
-                  <dt class="font-display text-sm font-semibold text-slate-900">{{ layer.label }}</dt>
-                  <dd class="mt-1 text-sm leading-relaxed text-slate-600">{{ layer.text }}</dd>
+                  <dt class="font-display text-sm font-semibold text-slate-900 dark:text-white">{{ layer.label }}</dt>
+                  <dd class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ layer.text }}</dd>
                 </div>
               </dl>
             </div>
@@ -191,12 +191,12 @@
               <h2 class="section-title mt-4 text-3xl sm:text-4xl">Unified Process</h2>
               <ol class="mt-8 space-y-5">
                 <li v-for="(phase, index) in lifecycle" :key="phase.title" class="flex gap-4">
-                  <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-50 font-display text-sm font-bold text-brand-700 ring-1 ring-brand-500/20">
+                  <span class="grid h-9 w-9 shrink-0 place-items-center rounded-full bg-brand-50 font-display text-sm font-bold text-brand-700 ring-1 ring-brand-500/20 dark:bg-brand-500/15 dark:text-brand-300">
                     {{ index + 1 }}
                   </span>
                   <div>
-                    <h3 class="font-display text-base font-semibold text-slate-900">{{ phase.title }}</h3>
-                    <p class="mt-1 text-sm leading-relaxed text-slate-600">{{ phase.text }}</p>
+                    <h3 class="font-display text-base font-semibold text-slate-900 dark:text-white">{{ phase.title }}</h3>
+                    <p class="mt-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ phase.text }}</p>
                   </div>
                 </li>
               </ol>
@@ -206,14 +206,14 @@
       </section>
 
       <!-- 6. Checklist + outcomes --------------------------------------- -->
-      <section class="bg-slate-50 py-20 md:py-24">
+      <section class="bg-slate-50 py-20 md:py-24 dark:bg-slate-900">
         <div class="container-x">
           <div class="grid gap-12 lg:grid-cols-2">
             <div>
               <span class="eyebrow">Implementation Checklist</span>
               <h2 class="section-title mt-4 text-3xl sm:text-4xl">Verification tests</h2>
               <ul class="mt-8 space-y-4">
-                <li v-for="check in checklist" :key="check" class="flex items-start gap-3 text-sm leading-relaxed text-slate-600">
+                <li v-for="check in checklist" :key="check" class="flex items-start gap-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                   <Icon name="lucide:check-circle-2" class="mt-0.5 h-5 w-5 shrink-0 text-brand-500" />
                   <span>{{ check }}</span>
                 </li>
@@ -224,9 +224,9 @@
               <span class="eyebrow">Project Outcomes</span>
               <h2 class="section-title mt-4 text-3xl sm:text-4xl">What it delivers</h2>
               <div class="mt-8 grid gap-4 sm:grid-cols-2">
-                <div v-for="outcome in outcomes" :key="outcome.title" class="rounded-2xl border border-slate-200 bg-white p-5">
-                  <h3 class="font-display text-sm font-semibold text-slate-900">{{ outcome.title }}</h3>
-                  <p class="mt-1.5 text-sm leading-relaxed text-slate-600">{{ outcome.text }}</p>
+                <div v-for="outcome in outcomes" :key="outcome.title" class="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-800 dark:bg-slate-900">
+                  <h3 class="font-display text-sm font-semibold text-slate-900 dark:text-white">{{ outcome.title }}</h3>
+                  <p class="mt-1.5 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ outcome.text }}</p>
                 </div>
               </div>
             </div>
@@ -235,12 +235,12 @@
       </section>
 
       <!-- 7. Backend commands ------------------------------------------- -->
-      <section class="bg-white pb-20 pt-20 md:pb-24 md:pt-24">
+      <section class="bg-white pb-20 pt-20 md:pb-24 md:pt-24 dark:bg-slate-950">
         <div class="container-x">
           <div class="max-w-2xl">
             <span class="eyebrow">Backend Management</span>
             <h2 class="section-title mt-4 text-3xl sm:text-4xl">Custom terminal commands</h2>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">
+            <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
               Commands used to manage the clinical &ldquo;brain&rdquo; and the flow of data.
             </p>
           </div>
@@ -257,28 +257,28 @@
       </section>
 
       <!-- 8. Roadmap ---------------------------------------------------- -->
-      <section class="bg-slate-50 py-20 md:py-24">
+      <section class="bg-slate-50 py-20 md:py-24 dark:bg-slate-900">
         <div class="container-x">
           <div class="max-w-2xl">
             <span class="eyebrow">Future Roadmap</span>
             <h2 class="section-title mt-4 text-3xl sm:text-4xl">From pilot to hospital-wide deployment</h2>
-            <p class="mt-4 text-base leading-relaxed text-slate-600">
+            <p class="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
               Continuous improvement work planned for the system beyond the pilot.
             </p>
           </div>
 
           <div class="mt-12 grid gap-6 md:grid-cols-2">
             <article v-for="item in roadmap" :key="item.title" class="card p-6">
-              <h3 class="font-display text-lg font-semibold tracking-tight text-slate-900">{{ item.title }}</h3>
-              <p class="mt-2 text-sm leading-relaxed text-slate-600">{{ item.text }}</p>
+              <h3 class="font-display text-lg font-semibold tracking-tight text-slate-900 dark:text-white">{{ item.title }}</h3>
+              <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{{ item.text }}</p>
             </article>
           </div>
 
-          <div class="mt-10 rounded-3xl border border-brand-500/20 bg-brand-50/60 p-6 sm:p-8">
-            <p class="flex items-start gap-3 text-sm leading-relaxed text-slate-700">
-              <Icon name="lucide:info" class="mt-0.5 h-5 w-5 shrink-0 text-brand-600" />
+          <div class="mt-10 rounded-3xl border border-brand-500/20 bg-brand-50/60 p-6 sm:p-8 dark:bg-brand-500/10">
+            <p class="flex items-start gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-200">
+              <Icon name="lucide:info" class="mt-0.5 h-5 w-5 shrink-0 text-brand-600 dark:text-brand-400" />
               <span>
-                <span class="font-semibold text-slate-900">Developer note.</span>
+                <span class="font-semibold text-slate-900 dark:text-white">Developer note.</span>
                 This system serves as a model for digital health initiatives, integrating Machine Learning, cyber security, and
                 data mining into a functional, real-world clinical environment.
               </span>

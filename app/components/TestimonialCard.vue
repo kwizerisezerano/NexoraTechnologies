@@ -12,17 +12,17 @@
       />
     </div>
 
-    <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-slate-600">
+    <blockquote class="mt-4 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
       “{{ testimonial.text }}”
     </blockquote>
 
-    <figcaption class="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5">
+    <figcaption class="mt-6 flex items-center gap-3 border-t border-slate-100 pt-5 dark:border-slate-800">
       <span class="grid h-11 w-11 shrink-0 place-items-center rounded-full bg-gradient-to-br from-brand-500 to-brand-700 font-display text-base font-bold text-white">
         {{ testimonial.name.charAt(0) }}
       </span>
       <span class="min-w-0">
-        <span class="block truncate font-semibold text-slate-900">{{ testimonial.name }}</span>
-        <span class="block truncate text-xs text-slate-500">{{ testimonial.role }}</span>
+        <span class="block truncate font-semibold text-slate-900 dark:text-white">{{ testimonial.name }}</span>
+        <span class="block truncate text-xs text-slate-500 dark:text-slate-400">{{ testimonial.role }}</span>
       </span>
     </figcaption>
   </figure>

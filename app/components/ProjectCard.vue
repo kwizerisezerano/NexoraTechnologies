@@ -7,39 +7,39 @@
       <Icon :name="project.icon" class="h-6 w-6" />
     </span>
 
-    <h3 class="mt-5 font-display text-lg font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-brand-600">
+    <h3 class="mt-5 font-display text-lg font-semibold tracking-tight text-slate-900 transition-colors group-hover:text-brand-600 dark:text-white">
       {{ project.title }}
     </h3>
-    <p v-if="project.subtitle" class="mt-1 text-sm font-medium text-brand-600">
+    <p v-if="project.subtitle" class="mt-1 text-sm font-medium text-brand-600 dark:text-brand-400">
       {{ project.subtitle }}
     </p>
-    <p class="mt-2 text-sm leading-relaxed text-slate-600">
+    <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
       {{ project.description }}
     </p>
 
     <div class="mt-auto flex flex-wrap items-center justify-between gap-x-3 gap-y-2 pt-5">
       <div class="flex flex-wrap items-center gap-2">
-        <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-wide text-slate-500">
+        <span class="rounded-full border border-slate-200 bg-slate-50 px-3 py-1 text-[0.68rem] font-semibold uppercase tracking-wide text-slate-500 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-400">
           {{ project.category }}
         </span>
         <span
           v-if="project.url"
-          class="inline-flex items-center gap-1.5 text-[0.68rem] font-semibold uppercase tracking-wide text-brand-700"
+          class="inline-flex items-center gap-1.5 text-[0.68rem] font-semibold uppercase tracking-wide text-brand-700 dark:text-brand-400"
         >
           <span class="h-1.5 w-1.5 rounded-full bg-brand-500" />
-          Live
+          {{ $t('portfolio.live') }}
         </span>
       </div>
 
       <!-- Hosted: whole-card external link -->
-      <span v-if="project.url" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-        Visit site
+      <span v-if="project.url" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">
+        {{ $t('portfolio.visitSite') }}
         <Icon name="lucide:external-link" class="h-4 w-4 transition-transform duration-300 group-hover:-translate-y-0.5" />
       </span>
 
       <!-- Case study: whole-card internal link -->
-      <span v-else-if="project.link" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-600">
-        Case study
+      <span v-else-if="project.link" class="inline-flex items-center gap-1 text-sm font-semibold text-brand-600 dark:text-brand-400">
+        {{ $t('portfolio.caseStudy') }}
         <Icon name="lucide:arrow-right" class="h-4 w-4 transition-transform duration-300 group-hover:translate-x-0.5" />
       </span>
 
@@ -47,9 +47,9 @@
       <NuxtLink
         v-else
         to="/#contact"
-        class="inline-flex items-center gap-1 text-sm font-semibold text-slate-500 transition-colors hover:text-brand-600"
+        class="inline-flex items-center gap-1 text-sm font-semibold text-slate-500 transition-colors hover:text-brand-600 dark:text-slate-400 dark:hover:text-brand-400"
       >
-        Request a demo
+        {{ $t('portfolio.requestDemo') }}
         <Icon name="lucide:arrow-right" class="h-4 w-4" />
       </NuxtLink>
     </div>
@@ -59,13 +59,13 @@
       :href="project.url"
       target="_blank"
       rel="noopener noreferrer"
-      :aria-label="`${project.title} — visit the live site`"
+      :aria-label="`${project.title} — ${$t('portfolio.visitSite')}`"
       class="absolute inset-0 z-10 rounded-[1.25rem]"
     />
     <NuxtLink
       v-else-if="project.link"
       :to="project.link"
-      :aria-label="`${project.title} — read the case study`"
+      :aria-label="`${project.title} — ${$t('portfolio.caseStudy')}`"
       class="absolute inset-0 z-10 rounded-[1.25rem]"
     />
   </article>

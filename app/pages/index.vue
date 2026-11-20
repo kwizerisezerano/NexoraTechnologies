@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-white overflow-x-hidden">
+  <div class="min-h-screen bg-white overflow-x-hidden dark:bg-slate-950">
     <Navbar />
     <main>
       <Hero />

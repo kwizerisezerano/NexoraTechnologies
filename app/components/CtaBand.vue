@@ -9,21 +9,21 @@
         class="reveal inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-4 py-1.5 text-xs font-semibold uppercase tracking-[0.16em] text-brand-300"
       >
         <Icon name="lucide:sparkles" class="h-3.5 w-3.5" />
-        Let's work together
+        {{ $t('cta.badge') }}
       </span>
 
       <h2
         v-motion="reveal(80)"
         class="reveal section-title mx-auto mt-6 max-w-3xl text-3xl text-white sm:text-4xl lg:text-5xl"
       >
-        Ready to build something great?
+        {{ $t('cta.title') }}
       </h2>
 
       <p
         v-motion="reveal(160)"
         class="reveal mx-auto mt-5 max-w-xl text-base leading-relaxed text-slate-300 sm:text-lg"
       >
-        Let's turn your idea into a reliable, scalable technology solution. Tell us what you're building.
+        {{ $t('cta.subtitle') }}
       </p>
 
       <div
@@ -31,11 +31,11 @@
         class="reveal mt-9 flex flex-col items-center justify-center gap-3 sm:flex-row"
       >
         <a href="#contact" class="btn btn-primary text-base">
-          Start Your Project
+          {{ $t('cta.ctaPrimary') }}
           <Icon name="lucide:arrow-up-right" class="h-5 w-5" />
         </a>
         <a href="#services" class="btn btn-dark-ghost text-base">
-          Explore Services
+          {{ $t('cta.ctaSecondary') }}
           <Icon name="lucide:compass" class="h-5 w-5" />
         </a>
       </div>

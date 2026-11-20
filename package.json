@@ -11,6 +11,8 @@
   },
   "dependencies": {
     "@nuxt/icon": "^2.6.3",
+    "@nuxtjs/color-mode": "^4.1.0",
+    "@nuxtjs/i18n": "^10.6.0",
     "@primevue/nuxt-module": "^5.0.5",
     "@primevue/themes": "^4.5.4",
     "@vueuse/motion": "^3.0.3",

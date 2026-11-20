@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="relative bg-white py-20 md:py-28">
+  <section id="contact" class="relative bg-white py-20 md:py-28 dark:bg-slate-950">
     <div class="container-x">
       <div
         v-motion="reveal(0)"
@@ -7,20 +7,20 @@
       >
         <span class="eyebrow justify-center">
           <span class="h-1.5 w-1.5 rounded-full bg-brand-500" />
-          Get In Touch
+          {{ $t('contact.eyebrow') }}
         </span>
-        <h2 class="section-title mt-4 text-3xl sm:text-4xl lg:text-5xl">Contact Us</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-          Ready to transform your business with technology? Get in touch with us today.
+        <h2 class="section-title mt-4 text-3xl sm:text-4xl lg:text-5xl">{{ $t('contact.title') }}</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+          {{ $t('contact.subtitle') }}
         </p>
       </div>
 
       <div class="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-16">
         <!-- Contact info -->
         <div v-motion="reveal(80)" class="reveal">
-          <h3 class="font-display text-xl font-semibold tracking-tight text-slate-900">Contact Information</h3>
-          <p class="mt-2 text-sm leading-relaxed text-slate-600">
-            Reach out through any of the channels below and our team will get back to you shortly.
+          <h3 class="font-display text-xl font-semibold tracking-tight text-slate-900 dark:text-white">{{ $t('contact.infoTitle') }}</h3>
+          <p class="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            {{ $t('contact.infoDesc') }}
           </p>
 
           <dl class="mt-8 space-y-5">
@@ -29,8 +29,8 @@
                 <Icon :name="item.icon" class="h-5 w-5" />
               </span>
               <div>
-                <dt class="font-semibold text-slate-900">{{ item.label }}</dt>
-                <dd class="mt-0.5 text-sm text-slate-600">{{ item.value }}</dd>
+                <dt class="font-semibold text-slate-900 dark:text-white">{{ item.label }}</dt>
+                <dd class="mt-0.5 text-sm text-slate-600 dark:text-slate-300">{{ item.value }}</dd>
               </div>
             </div>
           </dl>
@@ -44,51 +44,51 @@
           >
             <div class="space-y-5">
               <div>
-                <label for="contact-name" class="mb-2 block text-sm font-medium text-slate-700">Name</label>
+                <label for="contact-name" class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">{{ $t('contact.nameLabel') }}</label>
                 <input
                   id="contact-name"
                   v-model="form.name"
                   type="text"
                   required
-                  class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
-                  placeholder="Your name"
+                  class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder-slate-500"
+                  :placeholder="$t('contact.namePlaceholder')"
                 >
               </div>
               <div>
-                <label for="contact-email" class="mb-2 block text-sm font-medium text-slate-700">Email</label>
+                <label for="contact-email" class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">{{ $t('contact.emailFieldLabel') }}</label>
                 <input
                   id="contact-email"
                   v-model="form.email"
                   type="email"
                   required
-                  class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
-                  placeholder="your@email.com"
+                  class="w-full rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder-slate-500"
+                  :placeholder="$t('contact.emailPlaceholder')"
                 >
               </div>
               <div>
-                <label for="contact-message" class="mb-2 block text-sm font-medium text-slate-700">Message</label>
+                <label for="contact-message" class="mb-2 block text-sm font-medium text-slate-700 dark:text-slate-200">{{ $t('contact.messageLabel') }}</label>
                 <textarea
                   id="contact-message"
                   v-model="form.message"
                   rows="4"
                   required
-                  class="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30"
-                  placeholder="Tell us about your project..."
+                  class="w-full resize-none rounded-xl border border-slate-200 bg-white px-4 py-3 text-slate-900 placeholder-slate-400 shadow-sm transition focus:border-brand-400 focus:outline-none focus:ring-2 focus:ring-brand-500/30 dark:border-slate-700 dark:bg-slate-900 dark:text-white dark:placeholder-slate-500"
+                  :placeholder="$t('contact.messagePlaceholder')"
                 />
               </div>
 
               <button type="submit" class="btn btn-primary w-full text-base">
-                Send Message
+                {{ $t('contact.submit') }}
                 <Icon name="lucide:send" class="h-5 w-5" />
               </button>
 
               <p
                 v-if="submitted"
-                class="flex items-center justify-center gap-2 text-center text-sm font-semibold text-brand-600"
+                class="flex items-center justify-center gap-2 text-center text-sm font-semibold text-brand-600 dark:text-brand-400"
                 role="status"
               >
                 <Icon name="lucide:check-circle-2" class="h-4 w-4" />
-                Your email app is opening — just hit send and we'll be in touch.
+                {{ $t('contact.success') }}
               </p>
             </div>
           </form>
@@ -99,14 +99,16 @@
 </template>
 
 <script setup lang="ts">
-import { reactive, ref } from 'vue'
+import { reactive, ref, computed } from 'vue'
 
-const contactInfo = [
-  { label: 'Location', value: 'Kigali, Rwanda', icon: 'lucide:map-pin' },
-  { label: 'Email', value: 'info@nexoratechnologies.com', icon: 'lucide:mail' },
-  { label: 'Phone', value: '+250 787 059 322 / +250 790 989 830', icon: 'lucide:phone' },
-  { label: 'Working Hours', value: 'Mon - Fri: 8:00 AM - 6:00 PM', icon: 'lucide:clock' }
-]
+const { t } = useI18n()
+
+const contactInfo = computed(() => [
+  { label: t('contact.locationLabel'), value: t('contact.locationValue'), icon: 'lucide:map-pin' },
+  { label: t('contact.emailLabel'), value: 'info@nexoratechnologies.com', icon: 'lucide:mail' },
+  { label: t('contact.phoneLabel'), value: '+250 787 059 322 / +250 790 989 830', icon: 'lucide:phone' },
+  { label: t('contact.hoursLabel'), value: t('contact.hoursValue'), icon: 'lucide:clock' }
+])
 
 const form = reactive({
   name: '',

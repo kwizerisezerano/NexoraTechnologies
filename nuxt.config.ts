@@ -3,13 +3,44 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineNuxtConfig({
   compatibilityDate: '2025-07-15',
   devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', '@vueuse/motion/nuxt', '@nuxt/icon'],
+  modules: ['@vueuse/nuxt', '@vueuse/motion/nuxt', '@nuxt/icon', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
 
   // Tailwind v4 entry point — REQUIRED, otherwise no utility CSS is generated.
   css: ['~/assets/css/main.css'],
 
   vite: {
     plugins: [tailwindcss()]
+  },
+
+  // Multi-language (English, French, Swahili) with browser detection.
+  // `no_prefix` keeps URLs unchanged; the locale is switched in-place.
+  i18n: {
+    restructureDir: 'i18n',
+    langDir: 'locales',
+    defaultLocale: 'en',
+    strategy: 'no_prefix',
+    baseUrl: 'https://nexoratechnologies.com',
+    locales: [
+      { code: 'en', language: 'en-US', name: 'English', file: 'en.json' },
+      { code: 'fr', language: 'fr-FR', name: 'Français', file: 'fr.json' },
+      { code: 'sw', language: 'sw-KE', name: 'Kiswahili', file: 'sw.json' }
+    ],
+    detectBrowserLanguage: {
+      useCookie: true,
+      cookieKey: 'nexora_lang',
+      redirectOn: 'root',
+      alwaysRedirect: false,
+      fallbackLocale: 'en'
+    }
+  },
+
+  // Dark / light mode — follows the visitor's system preference by default.
+  colorMode: {
+    classSuffix: '',
+    preference: 'system',
+    fallback: 'light',
+    storageKey: 'nexora-color-mode',
+    disableTransition: false
   },
 
   app: {

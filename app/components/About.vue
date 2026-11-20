@@ -1,5 +1,5 @@
 <template>
-  <section id="about" class="relative bg-slate-50 py-20 md:py-28">
+  <section id="about" class="relative bg-slate-50 py-20 md:py-28 dark:bg-slate-900">
     <div class="container-x">
       <div
         v-motion="reveal(0)"
@@ -7,11 +7,11 @@
       >
         <span class="eyebrow justify-center">
           <span class="h-1.5 w-1.5 rounded-full bg-brand-500" />
-          Who We Are
+          {{ $t('about.eyebrow') }}
         </span>
-        <h2 class="section-title mt-4 text-3xl sm:text-4xl lg:text-5xl">About Us</h2>
-        <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg">
-          A trusted technology and engineering company in Rwanda, serving Africa and international markets.
+        <h2 class="section-title mt-4 text-3xl sm:text-4xl lg:text-5xl">{{ $t('about.title') }}</h2>
+        <p class="mt-4 text-base leading-relaxed text-slate-600 sm:text-lg dark:text-slate-300">
+          {{ $t('about.subtitle') }}
         </p>
       </div>
 
@@ -25,8 +25,8 @@
           <span class="icon-tile h-14 w-14">
             <Icon :name="pillar.icon" class="h-7 w-7" />
           </span>
-          <h3 class="mt-5 font-display text-xl font-semibold tracking-tight text-slate-900">{{ pillar.title }}</h3>
-          <p class="mt-3 leading-relaxed text-slate-600">{{ pillar.text }}</p>
+          <h3 class="mt-5 font-display text-xl font-semibold tracking-tight text-slate-900 dark:text-white">{{ pillar.title }}</h3>
+          <p class="mt-3 leading-relaxed text-slate-600 dark:text-slate-300">{{ pillar.text }}</p>
         </div>
       </div>
 
@@ -37,9 +37,9 @@
         >
           <span class="eyebrow justify-center">
             <span class="h-1.5 w-1.5 rounded-full bg-brand-500" />
-            Our Journey
+            {{ $t('about.journeyEyebrow') }}
           </span>
-          <h3 class="section-title mt-4 text-2xl sm:text-3xl lg:text-4xl">Growth Roadmap</h3>
+          <h3 class="section-title mt-4 text-2xl sm:text-3xl lg:text-4xl">{{ $t('about.journeyTitle') }}</h3>
         </div>
 
         <div class="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
@@ -57,41 +57,23 @@
 </template>
 
 <script setup lang="ts">
-const pillars = [
-  {
-    title: 'Our Mission',
-    icon: 'lucide:target',
-    text: 'Create practical, reliable and accessible technology solutions that help organizations operate better and solve real problems.'
-  },
-  {
-    title: 'Our Vision',
-    icon: 'lucide:eye',
-    text: 'Become a trusted technology and engineering company in Rwanda, then serve Africa and international markets.'
-  }
-]
+import { computed } from 'vue'
 
-const roadmap = [
-  {
-    title: 'Stage 1: Launch',
-    description: 'Software development focus. Company registration, website, portfolio, first clients.',
-    color: 'blue'
-  },
-  {
-    title: 'Stage 2: Build Products',
-    description: 'Turn repeated needs into reusable products or SaaS. Support and maintenance contracts.',
-    color: 'green'
-  },
-  {
-    title: 'Stage 3: Expand',
-    description: 'Pilot IoT solutions. Partner with qualified network and hardware specialists.',
-    color: 'purple'
-  },
-  {
-    title: 'Stage 4: Scale',
-    description: 'Systems integration, managed infrastructure, automation, regional delivery.',
-    color: 'orange'
-  }
-]
+const { t, tm, rt } = useI18n()
+
+const pillars = computed(() => [
+  { title: t('about.missionTitle'), icon: 'lucide:target', text: t('about.missionText') },
+  { title: t('about.visionTitle'), icon: 'lucide:eye', text: t('about.visionText') }
+])
+
+const colors = ['blue', 'green', 'purple', 'orange']
+const roadmap = computed(() =>
+  (tm('about.roadmap') as any[]).map((stage, i) => ({
+    title: rt(stage.title),
+    description: rt(stage.description),
+    color: colors[i] ?? 'green'
+  }))
+)
 
 const reveal = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },
