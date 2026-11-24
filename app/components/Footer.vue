@@ -72,11 +72,9 @@
               {{ $t('footer.hours') }}
             </li>
             <li>
-              <!-- Highlighted app download CTA -->
+              <!-- Highlighted app download CTA (streamed via /api/download) -->
               <a
-                :href="runtimeConfig.public.androidApkUrl"
-                target="_blank"
-                rel="noopener noreferrer"
+                href="/api/download"
                 class="btn btn-primary mt-2 inline-flex"
               >
                 <Icon name="simple-icons:android" class="h-5 w-5" />
@@ -99,7 +97,6 @@
 import { computed } from 'vue'
 
 const { t, tm, rt } = useI18n()
-const runtimeConfig = useRuntimeConfig()
 
 // WhatsApp: opens a chat with a pre-filled default message.
 const whatsappNumber = '250787059322'
