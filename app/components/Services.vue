@@ -69,9 +69,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const { tm } = useI18n()
+const { tm, rt } = useI18n()
 
-const capabilities = computed(() => tm('services.capabilities') as unknown as string[])
+const capabilities = computed(() => (tm('services.capabilities') as any[]).map((c) => rt(c)))
 
 const reveal = (delay = 0) => ({
   initial: { opacity: 0, y: 22 },

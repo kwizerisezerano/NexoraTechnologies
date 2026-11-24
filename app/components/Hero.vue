@@ -47,15 +47,6 @@
               {{ $t('hero.ctaSecondary') }}
               <Icon name="lucide:compass" class="h-5 w-5 text-brand-600" />
             </a>
-            <a
-              :href="runtimeConfig.public.androidApkUrl"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="btn btn-ghost text-base"
-            >
-              {{ $t('hero.downloadAndroid') }}
-              <Icon name="simple-icons:android" class="h-5 w-5 text-brand-600" />
-            </a>
           </div>
 
           <div
@@ -147,10 +138,9 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const { t, tm } = useI18n()
-const runtimeConfig = useRuntimeConfig()
+const { t, tm, rt } = useI18n()
 
-const days = computed(() => tm('hero.days') as unknown as string[])
+const days = computed(() => (tm('hero.days') as any[]).map((d) => rt(d)))
 const chart = [42, 58, 36, 74, 62, 88, 70]
 const mockStats = computed(() => [
   { value: '12', label: t('hero.panel.deployments') },

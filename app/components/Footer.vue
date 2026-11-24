@@ -71,14 +71,15 @@
               <Icon name="lucide:clock" class="h-4 w-4 text-brand-600 dark:text-brand-400" />
               {{ $t('footer.hours') }}
             </li>
-            <li class="flex items-center gap-2">
-              <Icon name="simple-icons:android" class="h-4 w-4 text-brand-600 dark:text-brand-400" />
+            <li>
+              <!-- Highlighted app download CTA -->
               <a
                 :href="runtimeConfig.public.androidApkUrl"
                 target="_blank"
                 rel="noopener noreferrer"
-                class="transition hover:text-brand-700 dark:hover:text-brand-300"
+                class="btn btn-primary mt-2 inline-flex"
               >
+                <Icon name="simple-icons:android" class="h-5 w-5" />
                 {{ $t('footer.downloadApp') }}
               </a>
             </li>
@@ -97,7 +98,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-const { t, tm } = useI18n()
+const { t, tm, rt } = useI18n()
 const runtimeConfig = useRuntimeConfig()
 
 // WhatsApp: opens a chat with a pre-filled default message.
@@ -116,7 +117,7 @@ const socials = [
   { label: 'GitHub', icon: 'simple-icons:github', href: '#' }
 ]
 
-const serviceLinks = computed(() => tm('footer.services') as unknown as string[])
+const serviceLinks = computed(() => (tm('footer.services') as any[]).map((s) => rt(s)))
 
 const companyLinks = computed(() => [
   { label: t('footer.companyAbout'), href: '/#about' },
