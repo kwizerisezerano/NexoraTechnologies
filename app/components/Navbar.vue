@@ -97,6 +97,7 @@
           <!-- Download app (streamed via /api/download so the site is not left) -->
           <a
             href="/api/download"
+            download="nexora-technologies.apk"
             class="ml-1 inline-flex items-center gap-1.5 whitespace-nowrap rounded-lg border border-brand-200 bg-brand-50 px-3 py-2 text-sm font-semibold text-brand-700 transition hover:border-brand-400 hover:text-brand-800 dark:border-brand-500/30 dark:bg-brand-500/10 dark:text-brand-300 dark:hover:text-brand-200"
             :aria-label="$t('nav.downloadApp')"
             :title="$t('nav.downloadApp')"
@@ -183,6 +184,7 @@
               </button>
               <a
                 href="/api/download"
+                download="nexora-technologies.apk"
                 class="inline-flex items-center gap-1.5 rounded-lg border border-slate-200 bg-white/70 px-3 py-2 text-sm font-medium text-slate-600 transition hover:text-brand-600 dark:border-slate-700 dark:bg-slate-900/60 dark:text-slate-300 dark:hover:text-brand-400"
               >
                 <Icon name="simple-icons:android" class="h-4 w-4" />

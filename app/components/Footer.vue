@@ -75,6 +75,7 @@
               <!-- Highlighted app download CTA (streamed via /api/download) -->
               <a
                 href="/api/download"
+                download="nexora-technologies.apk"
                 class="btn btn-primary mt-2 inline-flex"
               >
                 <Icon name="simple-icons:android" class="h-5 w-5" />
