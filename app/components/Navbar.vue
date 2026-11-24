@@ -234,7 +234,7 @@ const currentLocaleName = computed(
 )
 
 const chooseLocale = (code: string) => {
-  setLocale(code)
+  setLocale(code as 'en' | 'fr' | 'sw')
   langOpen.value = false
 }
 
