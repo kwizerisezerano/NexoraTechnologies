@@ -5,6 +5,14 @@ export default defineNuxtConfig({
   devtools: { enabled: true },
   modules: ['@vueuse/nuxt', '@vueuse/motion/nuxt', '@nuxt/icon', '@nuxtjs/i18n', '@nuxtjs/color-mode'],
 
+  // Public config exposed to the client. The Android APK lives on the
+  // nexora-mobile GitHub Releases page; "latest" always points to the newest tag.
+  runtimeConfig: {
+    public: {
+      androidApkUrl: 'https://github.com/kwizerisezerano/nexora-mobile/releases/latest/download/app-release.apk'
+    }
+  },
+
   // Tailwind v4 entry point — REQUIRED, otherwise no utility CSS is generated.
   css: ['~/assets/css/main.css'],
 

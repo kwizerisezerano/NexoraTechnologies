@@ -71,6 +71,17 @@
               <Icon name="lucide:clock" class="h-4 w-4 text-brand-600 dark:text-brand-400" />
               {{ $t('footer.hours') }}
             </li>
+            <li class="flex items-center gap-2">
+              <Icon name="simple-icons:android" class="h-4 w-4 text-brand-600 dark:text-brand-400" />
+              <a
+                :href="runtimeConfig.public.androidApkUrl"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="transition hover:text-brand-700 dark:hover:text-brand-300"
+              >
+                {{ $t('footer.downloadApp') }}
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -87,6 +98,7 @@
 import { computed } from 'vue'
 
 const { t, tm } = useI18n()
+const runtimeConfig = useRuntimeConfig()
 
 // WhatsApp: opens a chat with a pre-filled default message.
 const whatsappNumber = '250787059322'

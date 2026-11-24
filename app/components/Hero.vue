@@ -37,7 +37,7 @@
 
           <div
             v-motion="reveal(240)"
-            class="reveal mt-9 flex flex-col gap-3 sm:flex-row sm:items-center"
+            class="reveal mt-9 flex flex-col gap-3 sm:flex-row sm:flex-wrap sm:items-center"
           >
             <a href="#contact" class="btn btn-primary text-base">
               {{ $t('hero.ctaPrimary') }}
@@ -46,6 +46,15 @@
             <a href="#services" class="btn btn-ghost text-base">
               {{ $t('hero.ctaSecondary') }}
               <Icon name="lucide:compass" class="h-5 w-5 text-brand-600" />
+            </a>
+            <a
+              :href="runtimeConfig.public.androidApkUrl"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn-ghost text-base"
+            >
+              {{ $t('hero.downloadAndroid') }}
+              <Icon name="simple-icons:android" class="h-5 w-5 text-brand-600" />
             </a>
           </div>
 
@@ -139,6 +148,7 @@
 import { computed } from 'vue'
 
 const { t, tm } = useI18n()
+const runtimeConfig = useRuntimeConfig()
 
 const days = computed(() => tm('hero.days') as unknown as string[])
 const chart = [42, 58, 36, 74, 62, 88, 70]
