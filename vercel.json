@@ -1,10 +1,5 @@
 {
   "buildCommand": "npm run build",
   "outputDirectory": ".output",
-  "framework": null,
-  "env": {
-    "OPENROUTER_API_KEY": {
-      "description": "OpenRouter API key for AI chatbot"
-    }
-  }
+  "framework": null
 }
