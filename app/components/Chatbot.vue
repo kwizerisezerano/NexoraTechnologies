@@ -138,9 +138,18 @@ const sendMessage = async () => {
     const assistantMessage = response.choices[0]?.message?.content || 'No response from AI'
     messages.value.push({ role: 'assistant', content: assistantMessage })
   } catch (error: any) {
+    console.error('Chatbot error:', error)
+    let errorMessage = 'Failed to get response. Please try again.'
+
+    if (error.data?.statusMessage) {
+      errorMessage = error.data.statusMessage
+    } else if (error.message) {
+      errorMessage = error.message
+    }
+
     messages.value.push({
       role: 'assistant',
-      content: `Error: ${error.message || 'Failed to get response. Please try again.'}`
+      content: `Error: ${errorMessage}`
     })
   } finally {
     isLoading.value = false

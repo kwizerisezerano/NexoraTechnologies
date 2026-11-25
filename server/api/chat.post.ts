@@ -12,11 +12,14 @@ export default defineEventHandler(async (event) => {
   const apiKey = process.env.OPENROUTER_API_KEY
 
   if (!apiKey) {
+    console.error('OPENROUTER_API_KEY not found in environment variables')
     throw createError({
       statusCode: 500,
-      statusMessage: 'OpenRouter API key not configured'
+      statusMessage: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to your environment variables.'
     })
   }
+
+  console.log('Calling OpenRouter API with model:', model || 'nvidia/nemotron-3-ultra-550b-a55b:free')
 
   try {
     const response = await fetch('https://openrouter.ai/api/v1/chat/completions', {
@@ -41,15 +44,26 @@ export default defineEventHandler(async (event) => {
 
     const data = await response.json()
 
+    if (!response.ok) {
+      console.error('OpenRouter API error:', data)
+      throw createError({
+        statusCode: response.status,
+        statusMessage: data.error?.message || data.message || 'OpenRouter API error'
+      })
+    }
+
     if (data.error) {
+      console.error('OpenRouter error response:', data.error)
       throw createError({
         statusCode: 500,
         statusMessage: data.error.message || 'OpenRouter API error'
       })
     }
 
+    console.log('OpenRouter API success')
     return data
   } catch (error: any) {
+    console.error('OpenRouter API call failed:', error)
     throw createError({
       statusCode: 500,
       statusMessage: error.message || 'Failed to call OpenRouter API'
