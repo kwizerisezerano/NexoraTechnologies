@@ -2,6 +2,7 @@
   <div>
     <NuxtRouteAnnouncer />
     <NuxtPage />
+    <Chatbot />
   </div>
 </template>
 
