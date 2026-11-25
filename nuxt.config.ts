@@ -8,6 +8,8 @@ export default defineNuxtConfig({
   // Public config exposed to the client. The Android APK lives on the
   // nexora-mobile GitHub Releases page; "latest" always points to the newest tag.
   runtimeConfig: {
+    // Server-side only - not exposed to client
+    openRouterApiKey: process.env.OPENROUTER_API_KEY || '',
     public: {
       androidApkUrl: 'https://github.com/kwizerisezerano/nexora-mobile/releases/latest/download/app-release.apk'
     }

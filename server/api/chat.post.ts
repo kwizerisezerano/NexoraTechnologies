@@ -9,13 +9,14 @@ export default defineEventHandler(async (event) => {
     })
   }
 
-  const apiKey = process.env.OPENROUTER_API_KEY
+  const config = useRuntimeConfig()
+  const apiKey = config.openRouterApiKey
 
   if (!apiKey) {
-    console.error('OPENROUTER_API_KEY not found in environment variables')
+    console.error('OPENROUTER_API_KEY not found in runtime config')
     throw createError({
       statusCode: 500,
-      statusMessage: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to your environment variables.'
+      statusMessage: 'OpenRouter API key not configured. Please add OPENROUTER_API_KEY to your environment variables in Vercel.'
     })
   }
 
